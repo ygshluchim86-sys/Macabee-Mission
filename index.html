@@ -36,32 +36,96 @@
                 <img src="flyer.jpg" alt="The Maccabee's Mission Flyer" class="flyer-image glow-effect">
             </div>
 
-            <div class="cta-section">
+            <div class="faq-section">
                 <div class="menorah-icon">
                     <i class="fas fa-menorah"></i>
                 </div>
-                <h3>Great Family Activity!</h3>
-                <p class="mission-text">Follow the clues to find the hidden jug of oil!</p>
+                <h3>Frequently Asked Questions</h3>
+                <p class="mission-text">Everything you need to know about The Maccabee's Mission!</p>
 
-                <div class="price-tag">
-                    <span class="currency">$</span>40
-                    <span class="shipping">+ $5 shipping fee</span>
-                </div>
+                <div class="faq-container">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h4>What is The Maccabee's Mission?</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The Maccabee's Mission is a home-based Chanukah treasure hunt designed for the whole
+                                family. Follow the clues to find the hidden jug of oil and experience the joy of
+                                Chanukah in an interactive and engaging way!</p>
+                        </div>
+                    </div>
 
-                <div class="age-info">
-                    <p>Great for all ages!</p>
-                    <small>(Reading Required)</small>
-                </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-users"></i>
+                            <h4>Who is this activity suitable for?</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Great for all ages! This treasure hunt is perfect for families with children who can
+                                read. The clues are designed to be fun and challenging for both kids and adults alike.
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- Shopify Buy Button Container -->
-                <div id="product-component-1764712032002"></div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-home"></i>
+                            <h4>How does it work?</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The treasure hunt can be set up right in your own home! You'll receive a series of clues
+                                that guide participants from one location to the next, culminating in the discovery of
+                                the "hidden jug of oil" - a fun nod to the Chanukah miracle.</p>
+                        </div>
+                    </div>
 
-                <!-- Fallback/Alternative Contact -->
-                <div class="contact-info">
-                    <p>To order or for more info:</p>
-                    <a href="mailto:chanukahtreasurehunt@gmail.com" class="contact-link"><i class="fas fa-envelope"></i>
-                        chanukahtreasurehunt@gmail.com</a>
-                    <a href="tel:7183440554" class="contact-link"><i class="fas fa-phone"></i> 718-344-0554</a>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-clock"></i>
+                            <h4>How long does it take?</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The duration varies depending on your family's pace, but most treasure hunts take between
+                                30-60 minutes to complete. It's perfect for a Chanukah night activity!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Do I need any special materials?</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All you need is the treasure hunt kit and items you already have at home. The kit
+                                includes all the clues and instructions to set up the adventure. Just add your family's
+                                excitement!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-envelope"></i>
+                            <h4>How can I get more information?</h4>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For more information about The Maccabee's Mission, feel free to contact us:</p>
+                            <div class="contact-info">
+                                <a href="mailto:chanukahtreasurehunt@gmail.com" class="contact-link">
+                                    <i class="fas fa-envelope"></i> chanukahtreasurehunt@gmail.com
+                                </a>
+                                <a href="tel:7183440554" class="contact-link">
+                                    <i class="fas fa-phone"></i> 718-344-0554
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -74,174 +138,6 @@
 
     <script src="script.js"></script>
 
-    <!-- Shopify SDK -->
-    <script type="text/javascript">
-        /*<![CDATA[*/
-        (function () {
-            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-            if (window.ShopifyBuy) {
-                if (window.ShopifyBuy.UI) {
-                    ShopifyBuyInit();
-                } else {
-                    loadScript();
-                }
-            } else {
-                loadScript();
-            }
-            function loadScript() {
-                var script = document.createElement('script');
-                script.async = true;
-                script.src = scriptURL;
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                script.onload = ShopifyBuyInit;
-            }
-            function ShopifyBuyInit() {
-                var client = ShopifyBuy.buildClient({
-                    domain: 'f50vpk-ik.myshopify.com',
-                    storefrontAccessToken: '986f5cfaf06d5ee0c9eae3663ae9b2b7',
-                });
-                ShopifyBuy.UI.onReady(client).then(function (ui) {
-                    ui.createComponent('product', {
-                        id: '8441609715908',
-                        node: document.getElementById('product-component-1764712032002'),
-                        moneyFormat: '%24%7B%7Bamount%7D%7D',
-                        options: {
-                            "product": {
-                                "styles": {
-                                    "product": {
-                                        "@media (min-width: 601px)": {
-                                            "max-width": "calc(25% - 20px)",
-                                            "margin-left": "20px",
-                                            "margin-bottom": "50px"
-                                        }
-                                    },
-                                    "button": {
-                                        "font-family": "Cinzel, sans-serif",
-                                        "font-weight": "bold",
-                                        "font-size": "18px",
-                                        "padding-top": "17px",
-                                        "padding-bottom": "17px",
-                                        ":hover": {
-                                            "background-color": "#b38f2d"
-                                        },
-                                        "background-color": "#d4af37",
-                                        ":focus": {
-                                            "background-color": "#b38f2d"
-                                        },
-                                        "border-radius": "4px",
-                                        "padding-left": "40px",
-                                        "padding-right": "40px"
-                                    }
-                                },
-                                "contents": {
-                                    "img": false,
-                                    "title": false,
-                                    "price": false
-                                },
-                                "text": {
-                                    "button": "Order Now"
-                                }
-                            },
-                            "productSet": {
-                                "styles": {
-                                    "products": {
-                                        "@media (min-width: 601px)": {
-                                            "margin-left": "-20px"
-                                        },
-                                        "product": {
-                                            "@media (min-width: 601px)": {
-                                                "max-width": "100%",
-                                                "margin-left": "0",
-                                                "margin-bottom": "50px",
-                                                "text-align": "center"
-                                            }
-                                        },
-                                    }
-                                }
-                            },
-                            "modalProduct": {
-                                "contents": {
-                                    "img": false,
-                                    "imgWithCarousel": true,
-                                    "button": false,
-                                    "buttonWithQuantity": true
-                                },
-                                "styles": {
-                                    "product": {
-                                        "@media (min-width: 601px)": {
-                                            "max-width": "100%",
-                                            "margin-left": "0px",
-                                            "margin-bottom": "0px"
-                                        }
-                                    },
-                                    "button": {
-                                        "font-family": "Cinzel, sans-serif",
-                                        "font-weight": "bold",
-                                        "font-size": "18px",
-                                        "padding-top": "17px",
-                                        "padding-bottom": "17px",
-                                        ":hover": {
-                                            "background-color": "#b38f2d"
-                                        },
-                                        "background-color": "#d4af37",
-                                        ":focus": {
-                                            "background-color": "#b38f2d"
-                                        },
-                                        "border-radius": "4px",
-                                        "padding-left": "40px",
-                                        "padding-right": "40px"
-                                    }
-                                },
-                                "text": {
-                                    "button": "Add to cart"
-                                }
-                            },
-                            "option": {},
-                            "cart": {
-                                "styles": {
-                                    "button": {
-                                        "font-family": "Cinzel, sans-serif",
-                                        "font-weight": "bold",
-                                        "font-size": "18px",
-                                        "padding-top": "17px",
-                                        "padding-bottom": "17px",
-                                        ":hover": {
-                                            "background-color": "#b38f2d"
-                                        },
-                                        "background-color": "#d4af37",
-                                        ":focus": {
-                                            "background-color": "#b38f2d"
-                                        },
-                                        "border-radius": "4px"
-                                    }
-                                },
-                                "text": {
-                                    "total": "Subtotal",
-                                    "button": "Checkout"
-                                }
-                            },
-                            "toggle": {
-                                "styles": {
-                                    "toggle": {
-                                        "font-family": "Cinzel, sans-serif",
-                                        "font-weight": "bold",
-                                        "background-color": "#d4af37",
-                                        ":hover": {
-                                            "background-color": "#b38f2d"
-                                        },
-                                        ":focus": {
-                                            "background-color": "#b38f2d"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                    });
-                });
-            }
-        })();
-        /*]]>*/
-    </script>
 </body>
 
 </html>
