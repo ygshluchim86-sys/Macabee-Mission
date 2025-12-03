@@ -24,8 +24,10 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     position: relative;
-    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3); /* Better touch feedback on iOS */
-    -webkit-text-size-adjust: 100%; /* Prevent font scaling issues */
+    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3);
+    /* Better touch feedback on iOS */
+    -webkit-text-size-adjust: 100%;
+    /* Prevent font scaling issues */
 }
 
 body::before {
@@ -52,7 +54,7 @@ body>* {
     z-index: 2;
 }
 
-/* Background Animation */
+/* Background Animation - Beautiful CSS Stars */
 .stars,
 .twinkling {
     position: fixed;
@@ -61,27 +63,64 @@ body>* {
     width: 100%;
     height: 100%;
     display: block;
+    pointer-events: none;
 }
 
 .stars {
-    background: #000 url('http://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
+    background: #000;
     z-index: -2;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(2px 2px at 60px 70px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 50px 50px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(2px 2px at 90px 10px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 160px 120px, rgba(212, 175, 55, 0.8), transparent),
+        radial-gradient(1px 1px at 20px 150px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(2px 2px at 180px 50px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 100px 180px, rgba(212, 175, 55, 0.7), transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: stars-drift 240s linear infinite;
 }
 
 .twinkling {
-    background: transparent url('http://www.script-tutorials.com/demos/360/images/twinkling.png') repeat top center;
     z-index: -1;
-    animation: move-twink-back 200s linear infinite;
-    opacity: 0.3;
+    background: transparent;
+    background-image:
+        radial-gradient(1px 1px at 30px 40px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 80px 90px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(2px 2px at 140px 30px, rgba(212, 175, 55, 0.9), transparent),
+        radial-gradient(1px 1px at 110px 150px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 170px 100px, rgba(255, 255, 255, 0.6), transparent),
+        radial-gradient(2px 2px at 40px 120px, rgba(212, 175, 55, 0.8), transparent),
+        radial-gradient(1px 1px at 190px 160px, rgba(255, 255, 255, 0.7), transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkling 120s linear infinite, stars-drift 180s linear infinite reverse;
 }
 
-@keyframes move-twink-back {
+@keyframes stars-drift {
     from {
         background-position: 0 0;
     }
 
     to {
-        background-position: -10000px 5000px;
+        background-position: -200px -200px;
+    }
+}
+
+@keyframes twinkling {
+    0% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0.2;
     }
 }
 
@@ -147,6 +186,7 @@ header {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -185,7 +225,8 @@ header {
 
 .faq-section {
     grid-column: 2;
-    grid-row: 1 / span 2; /* Span both rows on the right */
+    grid-row: 1 / span 2;
+    /* Span both rows on the right */
 }
 
 .flyer-container {
@@ -201,6 +242,7 @@ header {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -212,6 +254,7 @@ header {
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -276,6 +319,7 @@ header {
             0 10px 30px rgba(0, 0, 0, 0.4),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
+
     to {
         box-shadow:
             0 0 60px rgba(212, 175, 55, 0.4),
@@ -297,6 +341,7 @@ header {
         transform: scale(1);
         filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7));
     }
+
     to {
         transform: scale(1.05);
         filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.9));
@@ -369,6 +414,7 @@ h3 {
 .faq-question i.fa-home,
 .faq-question i.fa-clock,
 .faq-question i.fa-lightbulb,
+.faq-question i.fa-shipping-fast,
 .faq-question i.fa-envelope {
     color: var(--gold-primary);
     font-size: 1.8rem;
@@ -382,6 +428,7 @@ h3 {
 .faq-question:hover i.fa-home,
 .faq-question:hover i.fa-clock,
 .faq-question:hover i.fa-lightbulb,
+.faq-question:hover i.fa-shipping-fast,
 .faq-question:hover i.fa-envelope {
     color: var(--gold-light);
     transform: scale(1.1);
@@ -428,7 +475,8 @@ h3 {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px; /* Large enough to accommodate any answer */
+    max-height: 500px;
+    /* Large enough to accommodate any answer */
     padding-bottom: 1.5rem;
 }
 
@@ -581,7 +629,8 @@ footer p {
     body {
         font-size: 16px;
         line-height: 1.5;
-        scroll-behavior: smooth; /* Smooth scrolling on mobile */
+        scroll-behavior: smooth;
+        /* Smooth scrolling on mobile */
     }
 
     .container {
@@ -671,7 +720,8 @@ footer p {
     .faq-question {
         padding: 1rem;
         gap: 0.8rem;
-        min-height: 60px; /* Ensure good touch target */
+        min-height: 60px;
+        /* Ensure good touch target */
         align-items: flex-start;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(212, 175, 55, 0.2);
@@ -682,6 +732,7 @@ footer p {
     .faq-question i.fa-home,
     .faq-question i.fa-clock,
     .faq-question i.fa-lightbulb,
+    .faq-question i.fa-shipping-fast,
     .faq-question i.fa-envelope {
         font-size: 1.3rem;
         min-width: 1.3rem;
@@ -706,7 +757,8 @@ footer p {
     }
 
     .faq-item.active .faq-answer {
-        max-height: 600px; /* Increased for mobile */
+        max-height: 600px;
+        /* Increased for mobile */
         padding-bottom: 1rem;
     }
 
@@ -818,7 +870,8 @@ footer p {
     }
 
     .faq-item.active .faq-answer {
-        max-height: 800px; /* Even more space for small screens */
+        max-height: 800px;
+        /* Even more space for small screens */
         padding-bottom: 0.8rem;
     }
 
