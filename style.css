@@ -24,6 +24,8 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     position: relative;
+    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3); /* Better touch feedback on iOS */
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling issues */
 }
 
 body::before {
@@ -154,6 +156,7 @@ header {
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 3rem;
     margin-top: 3rem;
     padding: 0 1rem;
@@ -165,6 +168,7 @@ header {
 
 .flyer-container {
     grid-column: 1;
+    grid-row: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,12 +178,14 @@ header {
     grid-column: 1;
     grid-row: 2;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    max-width: none;
+    justify-self: stretch;
 }
 
 .faq-section {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 2; /* Span both rows on the right */
 }
 
 .flyer-container {
@@ -538,19 +544,59 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 2rem 2rem;
+    }
+
+    .hero {
+        gap: 2rem 2.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .contact-section {
+        max-width: 450px;
+    }
+
+    .faq-section {
+        padding: 3rem 2rem;
+    }
+}
+
+/* Mobile Styles - Small screens only */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+        scroll-behavior: smooth; /* Smooth scrolling on mobile */
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+
     .main-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .hero {
         grid-template-columns: 1fr;
         gap: 2rem;
         margin-top: 2rem;
+        padding: 0;
     }
 
     .flyer-container {
@@ -558,37 +604,67 @@ footer p {
         grid-row: 1;
     }
 
+    .flyer-image {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
     .contact-section {
         grid-column: 1;
         grid-row: 2;
         margin-top: 0;
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+    }
+
+    .contact-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-link {
+        min-width: 180px;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
     }
 
     .faq-section {
         grid-column: 1;
         grid-row: 3;
-        padding: 2.5rem 1.5rem;
-        min-width: 280px;
-        max-width: 100%;
+        padding: 2rem 1rem;
+        margin: 0 0.5rem;
+        border-radius: 12px;
     }
 
     .menorah-icon {
-        font-size: 4rem;
+        font-size: 3.5rem;
         margin-bottom: 1.5rem;
     }
 
     h3 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .mission-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .faq-container {
+        margin-top: 1.5rem;
+    }
+
+    .faq-item {
+        margin-bottom: 1.2rem;
     }
 
     .faq-question {
-        padding: 1.2rem 1.5rem;
-        gap: 1rem;
+        padding: 1rem;
+        gap: 0.8rem;
+        min-height: 60px; /* Ensure good touch target */
+        align-items: flex-start;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(212, 175, 55, 0.2);
     }
 
     .faq-question i.fa-question-circle,
@@ -597,25 +673,151 @@ footer p {
     .faq-question i.fa-clock,
     .faq-question i.fa-lightbulb,
     .faq-question i.fa-envelope {
-        font-size: 1.5rem;
-        min-width: 1.5rem;
+        font-size: 1.3rem;
+        min-width: 1.3rem;
+        margin-top: 2px;
     }
 
     .faq-question h4 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.3;
+        flex: 1;
+        margin: 0;
+    }
+
+    .toggle-icon {
+        font-size: 1rem;
+        margin-left: 0.5rem;
     }
 
     .faq-answer {
-        padding: 0 1.5rem 0;
+        padding: 0 1rem 0;
+        font-size: 0.95rem;
     }
 
     .faq-item.active .faq-answer {
-        max-height: 400px;
-        padding-bottom: 1.2rem;
+        max-height: 600px; /* Increased for mobile */
+        padding-bottom: 1rem;
     }
 
     footer {
-        padding: 2rem 0 1.5rem;
+        padding: 2rem 1rem 1.5rem;
         margin-top: 3rem;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 400px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    header {
+        padding-top: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        grid-template-rows: auto auto auto;
+    }
+
+    .flyer-image {
+        max-width: 280px;
+        border-radius: 6px;
+    }
+
+    .contact-section {
+        padding: 1.2rem 0.8rem;
+        margin: 0 0.25rem;
+    }
+
+    .contact-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .contact-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-info {
+        gap: 0.8rem;
+    }
+
+    .contact-link {
+        min-width: 160px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+        gap: 0.5rem;
+    }
+
+    .faq-section {
+        padding: 1.5rem 0.8rem;
+        margin: 0 0.25rem;
+    }
+
+    .menorah-icon {
+        font-size: 3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .mission-text {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .faq-question {
+        padding: 0.8rem;
+        min-height: 50px;
+    }
+
+    .faq-question h4 {
+        font-size: 0.95rem;
+    }
+
+    .faq-answer {
+        padding: 0 0.8rem 0;
+        font-size: 0.9rem;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 800px; /* Even more space for small screens */
+        padding-bottom: 0.8rem;
+    }
+
+    footer {
+        padding: 1.5rem 0.5rem 1rem;
+        margin-top: 2rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
     }
 }
